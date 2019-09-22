@@ -36,8 +36,8 @@ class MahaLap {
     }
 
     static tamnaiWithTime(time) {
-        const randomNumber = Math.random();
-
+        const randomNumber = Math.floor(Math.random() * 100);
+        console.log("--->", time);
         if (time === "กลางวัน") {
             if (randomNumber >= 0.5) {
                 return randomNumber;
@@ -57,6 +57,8 @@ class MahaLap {
         const resultDay = this.tamnaiWithDay(day);
         const resultTime = this.tamnaiWithTime(time);
         const resultStory = this.tamnaiWithStory(story);
+
+        console.log(resultDay, resultStory, resultTime);
 
         let num = resultDay + resultTime * 100 + resultStory;
 

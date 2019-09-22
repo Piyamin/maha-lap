@@ -4,14 +4,18 @@ const Mahalap = require("./maha-lap");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => res.send("Hello World!"));
-app.get("/twofivezwro", (req, res) => {
+app.get("/", (req, res) => res.send("ด้วยมนต์250"));
+
+app.use("/public", express.static("public"));
+
+app.get("/namo", (req, res) => {
     const day = req.query.day;
     const story = req.query.story;
     const time = req.query.time;
-    const theHolyNumber = Mahalap.twofivezero(day, story, time);
+    console.log(day, story, time);
+    const theHolyNumber = Mahalap.TwoFiveZero(day, time, story);
     res.json({
-        reult: theHolyNumber
+        result: theHolyNumber
     });
 });
 
