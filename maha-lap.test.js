@@ -1,4 +1,4 @@
-const MahaLap = require("./maha-Lap");
+const MahaLap = require("./maha-lap");
 
 describe("Test Maha-Lap", () => {
     test("Test Tamnai with Sunday expect 1", () => {
